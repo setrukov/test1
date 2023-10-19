@@ -77,7 +77,7 @@ namespace TestProject5.Pages
         }
 
         public void InputTGNL(string tgnl)
-        {
+    {
             _TGNLInputForm.ClearAndType(tgnl);
         }
 

@@ -22,7 +22,7 @@ namespace TestProject5.Pages
 
         private ITextBox _PasswordInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'Пароль')]"), "A password input form");
         private ITextBox _PasswordConfirmationInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'Повторите')]"), "A password confirmation form");
-
+        
         private IButton _CountryFlag(string country) => ElementFactory.GetButton(By.XPath($"//div[contains(@role,'listbox')]//img[contains(@alt,'{country}')]"),"Country code selection by the flag");
         
         private IButton _NextRegPage => ElementFactory.GetButton(By.XPath("//button[contains(@name,'Далее')]"), "Next reg page button");
@@ -58,9 +58,9 @@ namespace TestProject5.Pages
             _PasswordConfirmationInputForm.ClearAndType(password);
         }
 
-        public void ClickCountryCodeSelector()
+    public void ClickCountryCodeSelector()
         {
-               _CountryCodeDropdown.Click();
+            _CountryCodeDropdown.Click();
         }
 
         public void ClickCountryFlag(string country) { 
