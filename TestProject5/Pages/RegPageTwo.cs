@@ -21,13 +21,14 @@ namespace TestProject5.Pages
         private ILabel _CompanyTypeDropdown => ElementFactory.GetLabel(By.XPath("//input[contains(@input-label,'Тип компании')]/../.."), "A company type dropdown");
         private IList<ILabel> _CompanyTypeElements => ElementFactory.FindElements<ILabel>(By.XPath("//div[contains(@class,'content__active')]//div[contains(@class,'checkbox')]"), "Ownership type to select from listbox");
 
-        private ITextBox _TGNLInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'ТГНЛ') and contains(@input-label,'организации')]"), "Abbreviated company name input form");
-        private ITextBox _INNInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'Сокращенное') and contains(@input-label,'организации')]"), "Abbreviated company name input form");
-
-        private ITextBox _KPPInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'Сокращенное') and contains(@input-label,'организации')]"), "Abbreviated company name input form");
-
-        private ITextBox _OKPOInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'Сокращенное') and contains(@input-label,'организации')]"), "Abbreviated company name input form");
-        private ITextBox _OGRNInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'Сокращенное') and contains(@input-label,'организации')]"), "Abbreviated company name input form");
+        private ITextBox _TGNLInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'ТГНЛ')]"), "TGNL input form");
+        private ITextBox _INNInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'ИНН')]"), "INN input form");
+        private ITextBox _KPPInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'КПП')]"), "KPP input form");
+        private ITextBox _OKPOInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'ОКПО') and not contains(@input-label,'БИН')]"), "OKPO input form");
+        private ITextBox _OGRNInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'ОГРН')]"), "OGRN input form");
+        private ITextBox _OGRNIPInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'ОГРНИП')]"), "OGRNIP input form");
+        private ITextBox _IINInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'ИИН')]"), "IIN input form");
+        private ITextBox _BINInputForm => ElementFactory.GetTextBox(By.XPath("//input[contains(@input-label,'БИН') and not contains(@input-label,'ОКПО')]"), "BIN input form");
 
 
         public void ClickCountriesDropDown()

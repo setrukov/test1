@@ -19,15 +19,42 @@ namespace TestProject5
         [Test]
         public void Test1()
         {
+            string countryFlagMarker;
+            string countryNameMarker;
+            
+            string testCaseCountry = "kz";
+            switch (testCaseCountry)
+            {
+                case "kz":
+                    countryFlagMarker = "kz";
+                    countryNameMarker = "Казахстан";
+                    break;
+                case "ru":
+                    countryFlagMarker = "ru";
+                    countryNameMarker = "Россия";
+                    break;
+                case "kg":
+                    countryFlagMarker = "kg";
+                    countryNameMarker = "Киргизия";
+                    break;
+            }
+            string testCaseOwnershipType = "ip";
+            string surName = "Ivanov";
+            string name =  "Vasiliy";
+            string secondName = "Ivanovich";
+            string email = "ivanov_ivan@gmail.com";
+            string phoneNumber = "9998887777";
+            string password = "888999Qq!";
+
             MainPage mainPage = new MainPage();
             mainPage.ClickRegistrateNewComapny();
             RegPageOne regPageOne = new RegPageOne();
-            regPageOne.InputSurname("Ivanov");
-            regPageOne.InputName("Vasiliy");
-            regPageOne.InputSecondName("Ivanovich");
-            regPageOne.InputEmail("ivanov_ivan@gmail.com");
-            regPageOne.InputPhoneNumber("9998887777");
-            regPageOne.InputPassword("888999Qq!");
+            regPageOne.InputSurname(surName);
+            regPageOne.InputName(name);
+            regPageOne.InputSecondName(secondName);
+            regPageOne.InputEmail(email);
+            regPageOne.InputPhoneNumber(phoneNumber);
+            regPageOne.InputPassword(password);
             regPageOne.ClickCountryCodeSelector();
             regPageOne.ClickCountryFlag("kz");
             regPageOne.ClickNextRegPage();
@@ -39,6 +66,7 @@ namespace TestProject5
             regPageTwo.ClickCompanyTypeDropDown();
             regPageTwo.SelectAllCompanyTypes();
             regPageTwo.ClickAFullCompanyName();
+            regPageTwo.InputAFullCompanyName("ООО АвтоАвиаАтриум");
             regPageTwo.InputAbbreviatedCompanyName("ООО ААА");
             regPageTwo.InputTGNL("88888");
             Assert.Pass();
