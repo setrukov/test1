@@ -1,14 +1,21 @@
 {
-  "test1Country": "Россия",
-  "test1OwnershipType": "ИП",
-  "test2Country": "Россия",
-  "test2OwnershipType": "ООО",
-  "test3Country": "Россия",
-  "test3OwnershipType": "ИП",
-  "test4Country": "Россия",
-  "test4OwnershipType": "ООО",
-  "test5Country": "Россия",
-  "test5OwnershipType": "ИП",
-  "test6Country": "Россия",
-  "test6OwnershipType": "ООО"
+  "countryName_ru": "Россия",
+  "countryName_kz": "Казахстан",
+  "countryName_kg": "Киригзия",
+  "surName": "Ivanov",
+  "name": "Vasiliy",
+  "secondName": "Ivanovich",
+  "email": "ivanov_ivan@gmail.com",
+  "phoneNumber": "9998887777",
+  "password": "888999Qq!",
+  "iin": "760724300757",
+  "inn": "500100732259",
+  "tgnl": "1234",
+  "bin": "",
+  "regNumber": "",
+  "okpo": "99999999",
+  "ogrnip": "316861700133226",
+  "ogrn": "1053600591197",
+  "kpp": "999999999"
+
 }

@@ -17,34 +17,21 @@ namespace TestProject5
         }
 
         [Test]
-        public void Test1()
+        [TestCase("kz","ИП")]
+       // [TestCase("ru", "ООО")]
+        public void Test1(string testCaseCountry, string testCaseOwnershipType)
         {
-            string countryFlagMarker;
-            string countryNameMarker;
-            
-            string testCaseCountry = "kz";
-            switch (testCaseCountry)
-            {
-                case "kz":
-                    countryFlagMarker = "kz";
-                    countryNameMarker = "Казахстан";
-                    break;
-                case "ru":
-                    countryFlagMarker = "ru";
-                    countryNameMarker = "Россия";
-                    break;
-                case "kg":
-                    countryFlagMarker = "kg";
-                    countryNameMarker = "Киргизия";
-                    break;
-            }
-            string testCaseOwnershipType = "ip";
-            string surName = "Ivanov";
-            string name =  "Vasiliy";
-            string secondName = "Ivanovich";
-            string email = "ivanov_ivan@gmail.com";
-            string phoneNumber = "9998887777";
-            string password = "888999Qq!";
+            string countryFlagMarker = testCaseCountry; 
+            string countryData = "countryName_" + testCaseCountry;
+            string countryNameMarker = JsonUtils.GetValue("testData", "countryName_" + testCaseCountry); 
+                        
+            //string testCaseOwnershipType = "ip";
+            string surName = JsonUtils.GetValue("testData", "surName");
+            string name = JsonUtils.GetValue("testData", "name");
+            string secondName = JsonUtils.GetValue("testData", "secondName");
+            string email = JsonUtils.GetValue("testData", "email");
+            string phoneNumber = JsonUtils.GetValue("testData", "phoneNumber");
+            string password = JsonUtils.GetValue("testData", "password");
 
             MainPage mainPage = new MainPage();
             mainPage.ClickRegistrateNewComapny();
@@ -56,19 +43,19 @@ namespace TestProject5
             regPageOne.InputPhoneNumber(phoneNumber);
             regPageOne.InputPassword(password);
             regPageOne.ClickCountryCodeSelector();
-            regPageOne.ClickCountryFlag("kz");
+            regPageOne.ClickCountryFlag(countryFlagMarker);
             regPageOne.ClickNextRegPage();
             RegPageTwo regPageTwo = new RegPageTwo();
             regPageTwo.ClickCountriesDropDown();
-            regPageTwo.SelectACountryFromListbox("Казахстан");
+            regPageTwo.SelectACountryFromListbox(countryNameMarker);
             regPageTwo.ClickOwnershipTypeDropDown();
-            regPageTwo.SelectOwnershipTypeFromListbox("ИП");
+            regPageTwo.SelectOwnershipTypeFromListbox(testCaseOwnershipType);
             regPageTwo.ClickCompanyTypeDropDown();
             regPageTwo.SelectAllCompanyTypes();
             regPageTwo.ClickAFullCompanyName();
             regPageTwo.InputAFullCompanyName("ООО АвтоАвиаАтриум");
             regPageTwo.InputAbbreviatedCompanyName("ООО ААА");
-            regPageTwo.InputTGNL("88888");
+            regPageTwo.InputTGNL("8888");
             Assert.Pass();
         }
     }
